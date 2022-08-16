@@ -1,0 +1,395 @@
+
+
+<!-- End Logo
+<img src="assets/mescudo.png" alt="">-->
+<ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+  <header  id="header" class="header2 fixed-top d-flex align-items-center ">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center"
+      [routerLink]="['/trailerlist']"
+      routerLinkActive="router-link-active">
+        <img src="assets/IPOPSA.png" alt="">
+
+      </a>
+
+
+
+    </div>
+
+    <nav  class=" header-nav ms-auto ">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+          <div class="container">
+
+            <div class="row">
+
+              </div>
+              <div class="row">
+              <div class="col-lg-12">
+
+                 <li class="nav-item">
+
+              <img style="margin-top:30px;" src="assets/mescudo.png" alt="" width="200" height="50">
+              <div>
+                <div class="mb-7 col-sm-12">
+                  <input  id="floatingInput" type="text"  class="form-control form-control-sm" placeholder="buscar">
+                </div>
+
+                <a style="position: absolute; right: 100px;" class="nav-link nav-icon search-bar-toggle " href="#">
+                  Contactos
+                </a>
+                <div style="margin-left: 100px;">
+                  <i style="font-size: 30px; " class="fab fa-twitter text-primary"></i>
+                  <i style="font-size: 30px;" class="fab fa-instagram insta"></i>
+                  <i style="font-size: 30px;" class="fab fa-facebook text-primary"></i>
+                </div>
+
+              </div>
+              </li></div><!-- Aquí puedes escribir tu comentario
+              <div class="col-6"><li class="nav-item">
+                <a
+                  class="nav-link"
+                  [routerLink]="['/signup']"
+                  routerLinkActive="router-link-active"
+                  >Crear cuenta</a
+                >
+              </li></div>-->
+
+            </div>
+
+          </div>
+          <!-- <li>  <img class="escudo"src="assets\mescudo.png"></li>
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              [routerLink]="['/signin']"
+              routerLinkActive="router-link-active"
+            >
+              Ingresar</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/signup']"
+              routerLinkActive="router-link-active"
+              >Crear cuenta</a
+            >
+          </li> -->
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <div class="col py-3">
+    <main role="main" class="container col py-3">
+      <div class="container p-5">
+        <router-outlet></router-outlet>
+      </div>
+
+    </main>
+</div>
+<div class="">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">© 2021 Company, Inc</p>
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+  </footer>
+</div>
+</ng-container>
+
+
+<!--  -->
+<ng-template #loggedIn>
+
+  <header  id="header"  class="header fixed-top d-flex align-items-center ">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center"
+      [routerLink]="['/ipopsa']"
+      routerLinkActive="router-link-active">
+        <img src="assets/IPOPSA.png" alt="">
+
+      </a>
+
+      <i class="bi bi-list toggle-sidebar-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"></i>
+
+    </div><!-- End Logo -->
+
+    <nav  class=" header-nav ms-auto ">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+
+
+
+
+          <li class="nav-item">
+            <a href="" class="nav-link" style="cursor: pointer"></a>
+          </li>
+          <li class="nav-item dropdown">
+
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">0</span>
+            </a><!-- End Notification Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <li class="dropdown-header">
+                No tienes notificaciones
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+
+
+
+
+            </ul><!-- End Notification Dropdown Items -->
+
+          </li><!-- End Notification Nav -->
+          <li class="nav-item dropdown">
+
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">0</span>
+            </a><!-- End Messages Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+              <li class="dropdown-header">
+                No tienes mensajes
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+
+
+
+            </ul><!-- End Messages Dropdown Items -->
+
+          </li><!-- End Messages Nav -->
+          <li class="nav-item dropdown pe-3">
+
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profile" class="rounded-circle">
+              <span class="d-none d-md-block dropdown-toggle ps-2">Usuario</span>
+            </a><!-- End Profile Iamge Icon -->
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li class="dropdown-header">
+                <h6>Usuario</h6>
+                <span>Estudiante</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <i class="bi bi-person"></i>
+                  <span>Perfil</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href=""
+                style="cursor: pointer"
+                (click)="authService.logout()" >
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Cerrar Sesión</span>
+                </a>
+
+              </li>
+
+
+            </ul><!-- End Profile Dropdown Items -->
+          </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+  <div class="container-xxl">
+    <div class="row flex-nowrap">
+        <div class=" col-auto  px-sm-2 px-0  collaps "id="navbarToggleExternalContent"style="width: 280px;  margin-left:10px;">
+            <div style="height: 100%;" class="sidebar d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-dark min-vh-100  ">
+                <a  style="margin-top: 10px;" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none  ">
+
+                    <span style="font-size:25px;" class=" mantenimiwnto ">
+                        <strong>
+                            Menu
+                        </strong>
+                    </span>
+                </a>
+                <hr>
+                <ul   style="width: 100%;" class="nav nav-pills flex-column mb-auto  ">
+                  <li href="#" class="nav-item">
+                    <a  class="nav-link active " aria-current="page" [routerLink]="['/trailer']"
+                    routerLinkActive="router-link-active">
+                      <i class="fa fa-home"></i>
+                      <span class="ms-2">Inicio</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a  href="#" class="nav-link text-dark" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                      <i class="fas fa-address-book"></i>
+                      <span class="ms-2">Registro</span>
+                    </a>
+                    <div class="collapse" id="orders-collapse">
+                      <ul style="width: 220px;" class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li><a href="#" class="dropdown-item  text-dark"aria-current="page"[routerLink]="['/score-student']"
+                            routerLinkActive="router-link-active" ><i class="fas fa-star"></i> Calificaciones</a></li>
+                          <li><a href="#" class="dropdown-item  text-dark"aria-current="page"[routerLink]="['/attendance-student']"
+                            routerLinkActive="router-link-active"><i class="fas fa-address-book"></i> Asistencia</a></li>
+                      </ul>
+                  </div>
+                  </li>
+                  <li>
+                    <a  href="#" class="nav-link text-dark ">
+                      <i class="fas fa-user"></i>
+                      <span class="ms-2">User</span>
+                    </a>
+                  </li>
+                  <a style="margin-top: 10px;"   class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none  ">
+
+                    <span style="font-size:25px;" class=" mantenimiwnto ">
+                        <strong>
+                            Menu Maestro.
+                        </strong>
+                    </span>
+                  </a>
+                  <li href="#" class="nav-item">
+                    <a  class="nav-link text-dark" aria-current="page"[routerLink]="['/ipopsa']"
+                    routerLinkActive="router-link-active" >
+                      <i class="fa fa-home"></i>
+                      <span class="ms-2">Inicio</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a  href="#" class="nav-link text-dark" data-bs-toggle="collapse" data-bs-target="#orders-collapse2" aria-expanded="false">
+                      <i class="fas fa-address-book"></i>
+                      <span class="ms-2">Registro</span>
+                    </a>
+                    <div class="collapse" id="orders-collapse2">
+                      <ul style="width: 220px;" class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li><a href="#" class="dropdown-item  text-dark"aria-current="page"[routerLink]="['/score-teacher']"
+                            routerLinkActive="router-link-active" ><i class="fas fa-star"></i> Calificaciones</a></li>
+                          <li><a href="#" class="dropdown-item  text-dark" aria-current="page"[routerLink]="['/attendance-teacher']"
+                            routerLinkActive="router-link-active"><i class="fas fa-address-book"></i> Asistencia</a></li>
+                      </ul>
+                  </div>
+                  </li>
+                  <li>
+                    <a  href="#" class="nav-link text-dark ">
+                      <i class="fas fa-user"></i>
+                      <span class="ms-2">User</span>
+                    </a>
+                  </li>
+                  <a style="margin-top: 10px;"   class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none  ">
+
+                    <span style="font-size:25px;" class=" mantenimiwnto ">
+                        <strong>
+                            Matenimiento
+                        </strong>
+                    </span>
+                  </a>
+                  <li style="margin-top:10px;" href="#" class="nav-item">
+                    <a  class="nav-link text-dark " aria-current="page" [routerLink]="['/student']"
+                    routerLinkActive="router-link-active">
+                    <i class="fas fa-graduation-cap"></i>
+
+                      <span class="ms-2">Estudiante</span>
+                    </a>
+                  </li>
+                  <li  href="#" class="nav-item">
+                    <a  class="nav-link text-dark " aria-current="page"[routerLink]="['/teacher']"
+                    routerLinkActive="router-link-active">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                      <span class="ms-2">Maestro</span>
+                    </a>
+                  </li>
+                  <li  href="#" class="nav-item">
+                    <a  class="nav-link text-dark " aria-current="page"[routerLink]="['/subject']"
+                    routerLinkActive="router-link-active">
+                    <i class="fas fa-book-reader"></i>
+                      <span class="ms-2">Asignatura</span>
+                    </a>
+                  </li>
+                  <li  href="#" class="nav-item">
+                    <a  class="nav-link text-dark " aria-current="page"[routerLink]="['/grade']"
+                    routerLinkActive="router-link-active">
+                    <i class="fas fa-school"></i>
+                      <span class="ms-2">Grado</span>
+                    </a>
+                  </li>
+                  <li  href="#" class="nav-item">
+                    <a  class="nav-link text-dark " aria-current="page"[routerLink]="['/score']"
+                    routerLinkActive="router-link-active">
+                    <i class="fas fa-star"></i>
+                      <span class="ms-2">Calificacion</span>
+                    </a>
+                  </li>
+                  <li  href="#" class="nav-item">
+                    <a  class="nav-link text-dark " aria-current="page"[routerLink]="['/attendance']"
+                    routerLinkActive="router-link-active">
+                    <i class="fas fa-address-book"></i>
+                      <span class="ms-2">Asistencia</span>
+                    </a>
+                  </li>
+
+              </ul>
+
+
+            <hr>
+                <hr>
+            </div>
+        </div>
+        <div class="col py-3">
+            <main role="main" class="container col py-3">
+              <div class="container p-5">
+                <router-outlet></router-outlet>
+              </div>
+
+            </main>
+        </div>
+    </div>
+  </div>
+
+</ng-template>
+
+
+<!--  -->
+
+
+

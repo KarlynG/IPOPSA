@@ -1,0 +1,210 @@
+<div style="margin-bottom: 40px;" class="titulocalificaciones">
+  <p> Maestros </p>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Agregar Maestro
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Maestro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #teacherForm="ngForm" (submit)="createTeacher(teacherForm)"  action="/teacher/edit/{{teacher._id}}" method="POST">
+          <div class="row">
+           <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="teacherService.selectedTeacher._id || teacher._id">
+           <div class="mb-3 col-sm-6" >
+           <label for="floatingInput">Nombre</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.name || teacher.name" name="name" #name="ngModel" class="form-control form-control-sm" placeholder="Titulo" required autofocus>
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Apellido</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.lastName || teacher.lastName" name="lastName" #name="ngModel" class="form-control form-control-sm" placeholder="Apellido"  required >
+         </div>
+          </div>
+          <div class="row">
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Género</label>
+             <select placeholder="Genero"id="teacher.gender" name="teacher.gender" [(ngModel)]="teacherService.selectedTeacher.gender || teacher.gender" class="form-select form-select-sm">
+               <option value="" disabled selected>Género</option>
+               <option value="Masculino" value="Masculino">Masculino</option>
+               <option value="Femenino" value="Femenino">Femenino</option>
+               </select>
+           </div>
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Email</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.email || teacher.email" name="email" #name="ngModel" class="form-control form-control-sm" placeholder="Email"  required >
+           </div>
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Fecha Nacimiento</label>
+             <input  id="floatingInput"  type="date" [(ngModel)]="teacherService.selectedTeacher.dob || teacher.dob" name="dob" #name="ngModel"class="form-control form-control-sm" placeholder="Año" required  min="1980" max="2023" step="1" value="1980"  >
+           </div>
+          </div>
+          <div class="row">
+           <div class="mb-3 col-sm-6">
+             <label for="floatingInput">Cedula</label>
+             <input  id="floatingInput" [(ngModel)]="teacherService.selectedTeacher.cedula || teacher.cedula" name="motherName"  #name="ngModel" class="form-control form-control-sm" placeholder="Madre" required >
+           </div>
+
+          </div>
+         <div class="row">
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Telefono</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.phoneNumber || teacher.phoneNumber" name="phoneNumber" #name="ngModel"class="form-control form-control-sm" placeholder="Telefono" required >
+           </div>
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Direccion</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.address || teacher.address" name="address" #name="ngModel"class="form-control form-control-sm" placeholder="Direccion" required >
+           </div>
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Codigo</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.code || teacher.code" name="code" #name="ngModel"class="form-control form-control-sm" placeholder="code" required >
+           </div>
+         </div>
+         <div class="row">
+           <div class=" mb-3 col-sm-4">
+             <label for="floatingInput">User</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.userId || teacher.userId" name="userId" #name="ngModel"class="form-control form-control-sm" placeholder="userId" required >
+           </div>
+           <div class=" mb-3 col-sm-4">
+             <label for="floatingInput">Imagen</label>
+             <input id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.image || teacher.image" name="image" #name="ngModel" class="form-control form-control-sm" placeholder="Imagen" required >
+           </div>
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Fecha Creacion</label>
+             <input  id="floatingInput"  type="date" [(ngModel)]="teacherService.selectedTeacher.createdDate || teacher.createdDate" name="createdDate" #name="ngModel"class="form-control form-control-sm" placeholder="Año" required  min="1980" max="2023" step="1" value="1980"  >
+           </div>
+         </div>
+
+         <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CSerrar</button>
+          <button type="submit" class="btn btn-primary" routerLinkActive="router-link-active">Guardar</button>
+        </div>
+         </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- Aquí puedes escribir tu comentario
+  <div class="mx-auto">
+    <div class="card border-light mb-3">
+      <div class="card-header">
+        Agregar Maestro
+      </div>
+      <div class="card-body">
+        <form #teacherForm="ngForm" (submit)="createTeacher(teacherForm)"  action="/teacher/edit/{{teacher._id}}" method="POST">
+         <div class="row">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="teacherService.selectedTeacher._id || teacher._id">
+          <div class="mb-3 col-sm-6" >
+          <label for="floatingInput">Nombre</label>
+          <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.name || teacher.name" name="name" #name="ngModel" class="form-control form-control-sm" placeholder="Titulo" required autofocus>
+        </div>
+        <div class="mb-3 col-sm-6">
+          <label for="floatingInput">Apellido</label>
+          <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.lastName || teacher.lastName" name="lastName" #name="ngModel" class="form-control form-control-sm" placeholder="Apellido"  required >
+        </div>
+         </div>
+         <div class="row">
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Género</label>
+            <select placeholder="Genero"id="teacher.gender" name="teacher.gender" [(ngModel)]="teacherService.selectedTeacher.gender || teacher.gender" class="form-select form-select-sm">
+              <option value="" disabled selected>Género</option>
+              <option value="Masculino" value="Masculino">Masculino</option>
+              <option value="Femenino" value="Femenino">Femenino</option>
+              </select>
+          </div>
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Email</label>
+            <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.email || teacher.email" name="email" #name="ngModel" class="form-control form-control-sm" placeholder="Email"  required >
+          </div>
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Fecha Nacimiento</label>
+            <input  id="floatingInput"  type="date" [(ngModel)]="teacherService.selectedTeacher.dob || teacher.dob" name="dob" #name="ngModel"class="form-control form-control-sm" placeholder="Año" required  min="1980" max="2023" step="1" value="1980"  >
+          </div>
+         </div>
+         <div class="row">
+          <div class="mb-3 col-sm-6">
+            <label for="floatingInput">Cedula</label>
+            <input  id="floatingInput" [(ngModel)]="teacherService.selectedTeacher.cedula || teacher.cedula" name="motherName"  #name="ngModel" class="form-control form-control-sm" placeholder="Madre" required >
+          </div>
+
+         </div>
+        <div class="row">
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Telefono</label>
+            <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.phoneNumber || teacher.phoneNumber" name="phoneNumber" #name="ngModel"class="form-control form-control-sm" placeholder="Telefono" required >
+          </div>
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Direccion</label>
+            <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.address || teacher.address" name="address" #name="ngModel"class="form-control form-control-sm" placeholder="Direccion" required >
+          </div>
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Codigo</label>
+            <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.code || teacher.code" name="code" #name="ngModel"class="form-control form-control-sm" placeholder="code" required >
+          </div>
+        </div>
+        <div class="row">
+          <div class=" mb-3 col-sm-4">
+            <label for="floatingInput">User</label>
+            <input  id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.userId || teacher.userId" name="userId" #name="ngModel"class="form-control form-control-sm" placeholder="userId" required >
+          </div>
+          <div class=" mb-3 col-sm-4">
+            <label for="floatingInput">Imagen</label>
+            <input id="floatingInput" type="text" [(ngModel)]="teacherService.selectedTeacher.image || teacher.image" name="image" #name="ngModel" class="form-control form-control-sm" placeholder="Imagen" required >
+          </div>
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Fecha Creacion</label>
+            <input  id="floatingInput"  type="date" [(ngModel)]="teacherService.selectedTeacher.createdDate || teacher.createdDate" name="createdDate" #name="ngModel"class="form-control form-control-sm" placeholder="Año" required  min="1980" max="2023" step="1" value="1980"  >
+          </div>
+        </div>
+          <div class="form-group col-auto">
+          <button type="submit" class="btn btn-primary mt-3 col order-1 "  routerLinkActive="router-link-active" >Guardar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+-->
+<div class="col-md-12 container my-3">
+<table class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Nombre</th>
+    <th scope="col">Apellido</th>
+    <th scope="col">Email</th>
+    <th scope="col">Codigo</th>
+    <th scope="col">Genero</th>
+    <th scope="col">Fecha creacion</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teacher of teachers" >
+      <td>{{teacher.name}}</td>
+      <td>{{teacher.lastName}}</td>
+      <td>{{teacher.email}}</td>
+      <td>{{teacher.code}}</td>
+      <td>{{teacher.gender}}</td>
+      <td>{{teacher.createdDate}}</td>
+      <td>
+        <a class="btn btn-secondary btn-sm" (click)="editTeacher(teacher)">
+          <i class="material-icons">edit</i>
+        </a>
+      </td>
+       <td>
+        <a class="btn btn-danger btn-sm" (click)="deleteTeacher(teacher._id)" >
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

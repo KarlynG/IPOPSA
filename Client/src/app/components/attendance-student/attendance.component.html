@@ -1,0 +1,92 @@
+<div style="margin-bottom: 100px;" class="titulocalificaciones">
+  <p>Asistencia </p>
+</div>
+<button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Agregar Asistencia
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #studentForm="ngForm" (submit)="createAttendance(studentForm)"  action="/attendance/edit/{{attendance._id}}" method="POST">
+          <div class="row">
+           <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="attendanceService.selectedAttendance._id || attendance._id">
+           <div class="mb-3 col-sm-6" >
+           <label for="floatingInput">Nombre</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="attendanceService.selectedAttendance.studentId || attendance.studentId" name="studentId" #name="ngModel" class="form-control form-control-sm" placeholder="Estudiante" required autofocus>
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Apellido</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="attendanceService.selectedAttendance.teacherId || attendance.teacherId" name="teacherId" #name="ngModel" class="form-control form-control-sm" placeholder="Maestro"  required >
+         </div>
+          </div>
+          <div class="row">
+           <div class="mb-3 col-sm-6">
+              <label for="floatingInput">Fecha creacion</label>
+              <input  id="floatingInput" type="date" [(ngModel)]="attendanceService.selectedAttendance.createdDate || attendance.createdDate" name="createdDate" #name="ngModel" class="form-control form-control-sm"  required >
+
+            </div>
+
+
+           <div class="mb-3 col-sm-6">
+             <label for="floatingInput">Email</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="attendanceService.selectedAttendance.userId || attendance.userId" name="userId" #name="ngModel" class="form-control form-control-sm" placeholder="User"  required >
+           </div>
+
+
+
+          </div>
+          <div class="row">
+
+            <div class="mb-3 col-sm-6">
+              <label for="floatingInput">Estado</label>
+              <select placeholder="Estado"id="attendance.status" name="attendance.status" [(ngModel)]="attendanceService.selectedAttendance.status || attendance.status" class="form-select form-select-sm">
+                <option value="" disabled selected>Estado</option>
+                <option value="Presente" value="Presente">Presente</option>
+                <option value="Ausente" value="Ausente">Ausente</option>
+                <option value="Excusa" value="Excusa">Excusa</option>
+                </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" routerLinkActive="router-link-active">Guardar</button>
+          </div>
+         </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-12 container my-3">
+<table class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Fecha Creacion</th>
+    <th scope="col">Estado</th>
+    <th scope="col">Asignatura</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let attendance of attendances" >
+      <td>{{attendance.createdDate}}</td>
+      <td>{{attendance.status}}</td>
+      <td>{{attendance.status}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

@@ -1,0 +1,29 @@
+
+
+<div style="margin-top: 80px;"  class="row">
+  
+  <div class="card shadow  mx-auto" style="width: 28rem;">
+    <img src="https://campusvirtual.ipopsa.edu.do/pluginfile.php/1/theme_moove/logo/1644246562/IPOPSA-LOGO4.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <form  (submit)="signIn()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label text-primary "> <strong>Correo electrónico </strong> </label>
+          <input type="email" [(ngModel)]="user.email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com"  required autofocus>
+          
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label text-primary"><strong>Contraseña</strong> </label>
+          <input type="password" [(ngModel)]="user.password" name="password" class="form-control" id="floatingPassword" placeholder="Contraseña"  required>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Recordar</label>
+        </div>
+        <button type="submit" class="btn btn-primary   ">Acceder</button>
+      </form>
+    </div>
+  </div>
+  
+  
+</div>
+

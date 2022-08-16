@@ -1,0 +1,85 @@
+.titulocalificaciones{
+    width: 239px;
+    height: 32px;
+
+    font-family: 'Varela';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 31px;
+    /* identical to box height */
+    color: #000000;
+    
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.input-group-overlay {
+position: absolute;
+width: 30%;
+right: 250px;
+
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.form-control {
+
+    width: 100%;
+    height: 47px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+}
+
+.input-group-append-overlay {
+    right: 0
+}
+
+.input-group-append-overlay,
+.input-group-prepend-overlay {
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 5
+}
+
+.input-group-text {
+    border: 0;
+    background-color: transparent
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .625rem 1rem;
+    margin-bottom: 2px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4b566b;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: .3125rem
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgba(0, 123, 255, .25) !important
+}
+
+.input-group-text i {
+    font-weight: 500
+}

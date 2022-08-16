@@ -1,0 +1,1 @@
+{"version":3,"file":"Grade.model.js","sourceRoot":"","sources":["../../src/models/Grade.model.ts"],"names":[],"mappings":";;;AAAA,qCAAkD;AAOrC,QAAA,WAAW,GAAG,IAAI,iBAAM,CAAC;IAClC,KAAK,EAAE;QACH,IAAI,EAAE,MAAM;QACZ,QAAQ,EAAE,IAAI;KACjB;IACD,IAAI,EAAC;QACD,IAAI,EAAC,MAAM;KACd;CACJ,CAAC,CAAC;AAEH,kBAAe,IAAA,gBAAK,EAAS,OAAO,EAAE,mBAAW,CAAC,CAAC"}

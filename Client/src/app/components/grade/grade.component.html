@@ -1,0 +1,98 @@
+<div style="margin-bottom: 100px;" class="titulocalificaciones">
+  <p>Grado </p>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Agregar Grado
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Grado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #studentForm="ngForm" (submit)="createGrade(studentForm)"  action="/attendance/edit/{{grade._id}}" method="POST">
+          <div class="row">
+           <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="gradeService.selectedGrade._id || grade._id">
+           <div class="mb-3 col-sm-6" >
+           <label for="floatingInput">Grado</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="gradeService.selectedGrade.grade || grade.grade" name="grade" #name="ngModel" class="form-control form-control-sm" placeholder="Grado" required autofocus>
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Codigo</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="gradeService.selectedGrade.grade || grade.code" name="code" #name="ngModel" class="form-control form-control-sm" placeholder="Código"  required >
+         </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" routerLinkActive="router-link-active">Agregar</button>
+          </div>
+         </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- Aquí puedes escribir tu comentario 
+  <div class="mx-auto">
+    <div class="card border-light mb-3">
+      <div class="card-header">
+        Agregar Grado
+      </div>
+      <div class="card-body">
+        <form #studentForm="ngForm" (submit)="createGrade(studentForm)"  action="/attendance/edit/{{grade._id}}" method="POST">
+         <div class="row">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="gradeService.selectedGrade._id || grade._id">
+          <div class="mb-3 col-sm-6" >
+          <label for="floatingInput">Grado</label>
+          <input  id="floatingInput" type="text" [(ngModel)]="gradeService.selectedGrade.grade || grade.grade" name="grade" #name="ngModel" class="form-control form-control-sm" placeholder="Grado" required autofocus>
+        </div>
+        <div class="mb-3 col-sm-6">
+          <label for="floatingInput">Codigo</label>
+          <input  id="floatingInput" type="text" [(ngModel)]="gradeService.selectedGrade.grade || grade.code" name="code" #name="ngModel" class="form-control form-control-sm" placeholder="Código"  required >
+        </div>
+         </div>
+         <div class="row">
+          <div class="form-group col-auto">
+          <button type="submit" class="btn btn-primary mt-3 col order-1 "  routerLinkActive="router-link-active" >Guardar</button>
+        </div>
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
+-->
+<div class="col-md-12 container my-3">
+<table class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Grado</th>
+    <th scope="col">Código</th>
+    <th scope="col">Opciones</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let grade of grades" >
+      <td>{{grade.grade}}</td>
+      <td>{{grade.code}}</td>
+      
+      <td>
+        <a class="btn btn-secondary btn-sm" (click)="editGrade(grade)">
+          <i class="material-icons">edit</i>
+        </a>
+        <a class="btn btn-danger btn-sm" (click)="deleteGrade(grade._id)" >
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

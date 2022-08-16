@@ -1,0 +1,115 @@
+<!-- Button trigger modal -->
+<div style="margin-bottom: 40px;" class="titulocalificaciones">
+  <p> Asignaturas </p>
+</div>
+
+<!-- Modal
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Asignatura</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #teacherForm="ngForm" (submit)="createSubject(teacherForm)" action="/subject/edit/{{subject._id}}" method="POST">
+          <div class="row">
+           <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="subjectService.selectedSubject._id || subject._id">
+           <div class="mb-3 col-sm-6" >
+           <label for="floatingInput">Nombre</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.name || subject.name" name="name" #name="ngModel" class="form-control form-control-sm" placeholder="Nombre" required autofocus>
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Codigo</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.code || subject.code" name="code" #name="ngModel" class="form-control form-control-sm" placeholder="Codigo"  required >
+         </div>
+          </div>
+          <div class="row">
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Area</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.areaId || subject.areaId" name="areaId" #name="ngModel" class="form-control form-control-sm" placeholder="Area"  required >
+           </div>
+           <div class="mb-3 col-sm-4">
+             <label for="floatingInput">Usuario</label>
+             <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.userId || subject.userId" name="userId" #name="ngModel" class="form-control form-control-sm" placeholder="Usuario" required >
+           </div>
+         </div>
+
+         </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"routerLinkActive="router-link-active">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<div class="row">
+
+  <div class="mx-auto">
+    <div class="card border-light mb-3">
+      <div class="card-header">
+        Agregar Asignatura
+      </div>
+      <div class="card-body">
+        <form #teacherForm="ngForm" (submit)="createSubject(teacherForm)" action="/subject/edit/{{subject._id}}" method="POST">
+         <div class="row">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="subjectService.selectedSubject._id || subject._id">
+          <div class="mb-3 col-sm-6" >
+          <label for="floatingInput">Nombre</label>
+          <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.name || subject.name" name="name" #name="ngModel" class="form-control form-control-sm" placeholder="Nombre" required autofocus>
+        </div>
+        <div class="mb-3 col-sm-6">
+          <label for="floatingInput">Codigo</label>
+          <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.code || subject.code" name="code" #name="ngModel" class="form-control form-control-sm" placeholder="Codigo"  required >
+        </div>
+         </div>
+         <div class="row">
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Area</label>
+            <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.areaId || subject.areaId" name="areaId" #name="ngModel" class="form-control form-control-sm" placeholder="Area"  required >
+          </div>
+          <div class="mb-3 col-sm-4">
+            <label for="floatingInput">Usuario</label>
+            <input  id="floatingInput" type="text" [(ngModel)]="subjectService.selectedSubject.userId || subject.userId" name="userId" #name="ngModel" class="form-control form-control-sm" placeholder="Usuario" required >
+          </div>
+        </div>
+          <div class="form-group col-auto">
+          <button type="submit" class="btn btn-primary mt-3 col order-1 "  routerLinkActive="router-link-active" >Guardar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 container my-3">
+<table class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Nombre</th>
+    <th scope="col">Codigo</th>
+    <th scope="col"> Area</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subject of subjects" >
+      <td>{{subject.name}}</td>
+      <td>{{subject.code}}</td>
+      <td>{{subject.areaId}}</td>
+      <td>
+        <a class="btn btn-secondary btn-sm" (click)="editSubject(subject)">
+          <i class="material-icons">edit</i>
+        </a>
+      </td>
+       <td>
+        <a class="btn btn-danger btn-sm" (click)="deleteSubject(subject._id)" >
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

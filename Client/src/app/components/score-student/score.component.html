@@ -1,0 +1,30 @@
+<div class="titulocalificaciones">
+  <p>Calificaciones </p>
+</div>
+
+
+
+<div  class="col-md-12 container my-3">
+  
+<table style="margin-top: 100px;" class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Asignatura</th>
+    <th scope="col">Maestro</th>
+    <th scope="col">Fecha</th>
+    <th scope="col">Calificacion</th>
+
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let score of scores" >
+      <td>{{score.subjectId}}</td>
+      <td>{{score.teacherId}}</td>
+      <td>{{score.createdDate}}</td>
+      <td>{{score.score}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

@@ -1,0 +1,25 @@
+<div style="margin-bottom: 100px;" class="titulocalificaciones">
+  <p>Asistencia </p>
+</div>
+<div class="row">
+
+<div class="col-md-12 container my-3">
+<table class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Estudiante</th>
+    <th scope="col">Fecha Creacion</th>
+    <th scope="col">Estado</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let attendance of attendances" >
+      <td>{{attendance.studentId}}</td>
+      <td>{{attendance.createdDate}}</td>
+      <td>{{attendance.status}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

@@ -1,0 +1,1 @@
+{"version":3,"file":"Area.model.js","sourceRoot":"","sources":["../../src/models/Area.model.ts"],"names":[],"mappings":";;;AAAA,qCAAkD;AAOrC,QAAA,UAAU,GAAG,IAAI,iBAAM,CAAC;IACjC,IAAI,EAAE;QACF,IAAI,EAAE,MAAM;QACZ,QAAQ,EAAE,IAAI;KACjB;IACD,IAAI,EAAC;QACD,IAAI,EAAC,MAAM;KACd;CACJ,CAAC,CAAC;AAEH,kBAAe,IAAA,gBAAK,EAAQ,MAAM,EAAE,kBAAU,CAAC,CAAC"}

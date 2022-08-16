@@ -1,0 +1,94 @@
+
+
+<div   class="titulocalificaciones">
+  <p>Calificaciones </p>
+</div>
+<div style="position: absolute;" class="container d-flex justify-content-center mt-100">
+  <div class="input-group-overlay d-none d-lg-flex mx-4"> <input class="form-control appended-form-control" type="text" placeholder="Buscar Estudiante">
+      <div class="input-group-append-overlay"><span class="input-group-text"><i class="fa fa-search"></i></span></div>
+  </div>
+
+</div>
+<button style="margin-top: 100px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Agregar Calificaciones
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #studentForm="ngForm" (submit)="create(studentForm)"  action="/score/edit/{{score._id}}" method="POST">
+          <div class="row">
+           <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="scoreService.selectedScore">
+           <div class="mb-3 col-sm-6" >
+           <label for="floatingInput">Asignatura</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="scoreService.selectedScore.subjectId || score.subjectId" name="subjectId" #name="ngModel" class="form-control form-control-sm" placeholder="Codigo"  required >
+ 
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Maestro</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="scoreService.selectedScore.teacherId || score.teacherId" name="code" #name="ngModel" class="form-control form-control-sm" placeholder="Maestro"  required >
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Fecha Creacion</label>
+           <input  id="floatingInput" type="date" [(ngModel)]="scoreService.selectedScore.createdDate || score.createdDate" name="createArea" #name="ngModel" class="form-control form-control-sm"  required >
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Calificacion</label>
+           <input  id="floatingInput" type="number" [(ngModel)]="scoreService.selectedScore.score || score.score" name="score" #name="ngModel" class="form-control form-control-sm" placeholder="Calificacion"  required >
+         </div>
+         <div class="mb-3 col-sm-6">
+           <label for="floatingInput">Usuario</label>
+           <input  id="floatingInput" type="text" [(ngModel)]="scoreService.selectedScore.userId || score.userId" name="userId" #name="ngModel" class="form-control form-control-sm" placeholder="Codigo"  required >
+         </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" routerLinkActive="router-link-active">Guardar</button>
+          </div>
+         </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-12 container my-3">
+<table class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Asignatura</th>
+    <th scope="col">Estudiante</th>
+
+    <th scope="col">Calificacion</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let score of scores" >
+      <td>{{score.subjectId}}</td>
+      <td>{{score.userId}}</td>
+      <td>{{score.score}}</td>
+
+      <td>
+        <a class="btn btn-secondary btn-sm" (click)="edit(score)">
+          <i class="material-icons">edit</i>
+        </a>
+      </td>
+       <td>
+        <a class="btn btn-danger btn-sm" (click)="delete(score._id)" >
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="mx-auto">
+    <div class="card border-light mb-3">
+      <div class="card-header">
+        Agregar area
+      </div>
+      <div class="card-body">
+        <form #studentForm="ngForm" (submit)="createArea(studentForm)"  action="/area/edit/{{area._id}}" method="POST">
+         <div class="row">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="areaService.selectedArea._id || area._id">
+          <div class="mb-3 col-sm-6" >
+          <label for="floatingInput">Nombre</label>
+          <select placeholder="name"id="area.name" name="area.name" [(ngModel)]="areaService.selectedArea.name || area.name" class="form-select form-select-sm">
+            <option value="" disabled selected>Áreas</option>
+            <option value="Artes Gráficas" value="Artes Gráficas">Artes Gráficas</option>
+            <option value="Artes Visuales" value="Artes Visuales">Artes Visuales</option>
+            <option value="Contabilidad" value="Contabilidad">Contabilidad</option>
+            <option value="Electricidad" value="Electricidad">Artes Gráficas</option>
+            <option value="Electrónica" value="Electrónica">Electrónica</option>
+            <option value="Informática" value="Informática">Informática</option>
+            <option value="Música" value="Música">Música</option>
+            <option value="Refrigeración" value="Refrigeración">Refrigeración</option>
+            </select>
+        </div>
+        <div class="mb-3 col-sm-6">
+          <label for="floatingInput">Code</label>
+          <input  id="floatingInput" type="text" [(ngModel)]="areaService.selectedArea.code || area.code" name="code" #name="ngModel" class="form-control form-control-sm" placeholder="Codigo"  required >
+        </div>
+         </div>
+          <div class="form-group col-auto">
+          <button type="submit" class="btn btn-primary mt-3 col order-1 "  routerLinkActive="router-link-active" >Guardar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 container my-3">
+<table class="table table-hover">
+  <thead >
+    <tr >
+    <th scope="col">Nombre</th>
+    <th scope="col">Código</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let area of areas" >
+      <td>{{area.name}}</td>
+      <td>{{area.code}}</td>
+      <td>
+        <a class="btn btn-secondary btn-sm" (click)="editArea(area)">
+          <i class="material-icons">edit</i>
+        </a>
+      </td>
+       <td>
+        <a class="btn btn-danger btn-sm" (click)="deleteArea(area._id)" >
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
